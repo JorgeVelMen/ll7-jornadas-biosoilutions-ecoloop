@@ -170,7 +170,7 @@ function renderMesa(m) {
     '<div class="hexrow"><div class="hex" aria-hidden="true"></div><div><small>Reto de la mesa</small><strong>' + esc(m.reto) + '</strong></div></div>' +
     '<section class="card"><h2>Pregunta guía</h2><p class="q">' + esc(m.pregunta) + '</p></section>' +
     '<section class="card"><h2>Contexto</h2>' + (m.enunciado ? '<p><b>' + esc(m.enunciado) + '</b></p>' : '') + '<p>' + esc(m.contexto) + '</p></section>' +
-    '<p class="note">Los pasos de la dinámica se irán presentando en la pantalla de la sala, uno cada vez.</p>' + FOOT;
+    '<p class="note">Los pasos de la dinámica se irán presentando en la pantalla de la sala, uno cada vez.</p><p class="note"><a href="resultados.html#mesa-' + m.n + '" style="color:var(--paper);font-weight:500">Ver lo que ha enviado esta mesa →</a></p>' + FOOT;
   document.title = 'Mesa ' + m.n + ' · Fichas de mesa LL7';
   window.scrollTo(0, 0);
 }

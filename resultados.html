@@ -28,7 +28,7 @@ h1{margin:0;font-weight:400;font-size:clamp(28px,7vw,40px);line-height:1.1;text-
 .tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .btn{font:inherit;font-weight:700;font-size:16px;border:0;border-radius:10px;padding:10px 16px;background:var(--yellow);color:var(--blue);cursor:pointer;text-decoration:none}
 .btn.ghost{background:transparent;color:var(--paper);border:1.5px solid rgba(251,251,255,.6);font-weight:500}
-nav.jump{display:flex;flex-wrap:wrap;gap:6px}nav.jump a{color:var(--paper);text-decoration:none;border:1.5px solid rgba(251,251,255,.55);border-radius:9px;padding:6px 11px;font-size:15px}
+nav.jump{display:flex;flex-wrap:wrap;gap:6px}nav.jump a[aria-current="page"]{background:var(--paper);color:var(--blue)!important;border-color:var(--paper)}nav.jump a{color:var(--paper);text-decoration:none;border:1.5px solid rgba(251,251,255,.55);border-radius:9px;padding:6px 11px;font-size:15px}
 .status{color:var(--soft);font-size:14px;margin:0}
 .mesa{background:var(--paper);color:var(--ink2);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:12px;scroll-margin-top:72px}
 .mesa header.mh{display:flex;gap:14px;align-items:center}
@@ -54,9 +54,9 @@ a:focus-visible,.btn:focus-visible{outline:3px solid var(--yellow);outline-offse
 <p class="sub">Mapeo cooperativo de retos · 5 de noviembre de 2026 · Puesta en común desde las 12:45</p>
 <div class="tools"><button class="btn" id="pdf" type="button">Descargar todo en PDF</button><button class="btn ghost" id="reload" type="button">Actualizar</button></div>
 <p class="status" id="status" aria-live="polite">Cargando respuestas…</p>
-<nav class="jump" aria-label="Ir a una mesa"><a href="#r-1">Mesa 1</a><a href="#r-2">Mesa 2</a><a href="#r-3">Mesa 3</a><a href="#r-4">Mesa 4</a><a href="#r-5">Mesa 5</a></nav>
+<nav class="jump" aria-label="Elegir mesa"><a href="#todas" data-f="0">Todas las mesas</a><a href="#mesa-1" data-f="1">Mesa 1</a><a href="#mesa-2" data-f="2">Mesa 2</a><a href="#mesa-3" data-f="3">Mesa 3</a><a href="#mesa-4" data-f="4">Mesa 4</a><a href="#mesa-5" data-f="5">Mesa 5</a></nav>
 <div id="out" style="display:flex;flex-direction:column;gap:16px"></div>
-<p class="status noprint">Para guardar el PDF, en la ventana de impresión elige «Guardar como PDF». Las respuestas se actualizan solas cada minuto y pueden tardar unos minutos en aparecer.</p>
+<p class="status noprint">«Todas las mesas» reúne en un solo documento las respuestas de las cinco mesas. Para guardar el PDF, en la ventana de impresión elige «Guardar como PDF». Las respuestas se actualizan solas cada minuto y pueden tardar unos minutos en aparecer.</p>
 </main>
 <script>
 const CSV='https://docs.google.com/spreadsheets/d/e/2PACX-1vRXax_QkOjzg2WhjSWVGWYCfyZzYEo4tPX0HPudV3F0XziVH8LadGLOMWhapUOvqbI41dTbiaTGVKUc/pub?gid=0&single=true&output=csv';
@@ -83,11 +83,16 @@ function render(rows){
    blk('Pregunta abierta',v(r,'preg'),'var(--lblue)')+foto(v(r,'foto'))+blk('Comentarios',v(r,'com'),'var(--blue)')+'</div>').join(''):'<p class="empty">Esta mesa aún no ha enviado su plantilla.</p>')+'</section>'}).join('');
  return n}
 async function load(){const st=document.getElementById('status');
- try{const r=await fetch(CSV+'&t='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error(r.status);const n=render(parseCSV(await r.text()));
+ try{const r=await fetch(CSV+'&t='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error(r.status);const n=render(parseCSV(await r.text()));filt();
   const t=new Date().toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});st.textContent=(n?n+(n==1?' respuesta':' respuestas'):'Aún no hay respuestas')+' · actualizado a las '+t}
  catch(e){st.textContent='No se han podido cargar las respuestas ahora mismo. Se volverá a intentar en un minuto.'}}
+function filt(){const m=/^#mesa-([1-5])$/.exec(location.hash);const f=m?m[1]:'0';
+ document.querySelectorAll('nav.jump a').forEach(a=>a.setAttribute('aria-current',a.dataset.f===f?'page':'false'));
+ document.querySelectorAll('section.mesa').forEach(s=>{s.hidden=f!=='0'&&s.id!=='r-'+f});
+ document.getElementById('pdf').textContent=f==='0'?'Descargar todo en PDF':'Descargar la mesa '+f+' en PDF';}
+window.addEventListener('hashchange',filt);
 document.getElementById('pdf').addEventListener('click',()=>window.print());
 document.getElementById('reload').addEventListener('click',load);
-render([]);load();setInterval(load,60000);
+render([]);filt();load();setInterval(load,60000);
 </script>
 </body></html>
