@@ -1,0 +1,168 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex"><meta name="googlebot" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<script>window.DEFAULT_MESA=4;</script>
+<title>Fichas de mesa LL7</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap">
+<style>
+/* Layout: una sola columna tipo tarjeta de mesa, azul VIC con trama de puntos, como la trasera de las jornadas */
+:root {
+  --blue: #0624FF;
+  --blue-deep: #041BC4;
+  --paper: #FBFBFF;
+  --soft: #D3DAFF;
+  --ink: #0624FF;
+  --ink-2: #2B3A8F;
+  --dot: #7E5283;
+  --yellow: #F5C431;
+  --font: 'Space Grotesk', 'Segoe UI', Arial, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--blue);
+  color: var(--paper);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.5;
+  min-height: 100%;
+  background-image: radial-gradient(circle, var(--dot) 0 3px, transparent 3.5px);
+  background-size: 18px 18px;
+  background-position: top right;
+}
+.wrap {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  padding-block: 28px 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.veil {
+  position: fixed; inset: 0; pointer-events: none;
+  background: linear-gradient(200deg, rgba(6,36,255,0) 0%, rgba(6,36,255,0.85) 38%, var(--blue) 60%);
+}
+.pill {
+  align-self: flex-start;
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 9px;
+}
+h1 {
+  margin: 0;
+  font-weight: 400;
+  font-size: clamp(30px, 7vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.sub { margin: -8px 0 0; color: var(--soft); font-size: 16px; }
+.hexrow { display: flex; gap: 18px; align-items: center; }
+.hex {
+  flex: none;
+  width: 78px; height: 90px;
+  background: var(--yellow);
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+.hexrow small { display: block; color: var(--soft); font-size: 14px; letter-spacing: 0.02em; }
+.hexrow strong { display: block; font-weight: 500; font-size: clamp(22px, 5.4vw, 30px); line-height: 1.15; text-wrap: balance; }
+.card {
+  background: var(--paper);
+  color: var(--ink-2);
+  border-radius: 16px;
+  padding: 22px 22px 24px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.card h2 { margin: 0; color: var(--ink); font-weight: 500; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; }
+.card .q { margin: 0; color: var(--ink); font-size: clamp(20px, 4.8vw, 24px); line-height: 1.3; font-weight: 500; text-wrap: pretty; }
+.card p { margin: 0; max-width: 62ch; }
+.note { color: var(--soft); font-size: 15px; margin: 0; max-width: 62ch; }
+nav.mesas { display: flex; flex-wrap: wrap; gap: 8px; }
+nav.mesas a {
+  color: var(--paper); text-decoration: none;
+  border: 1.5px solid rgba(251,251,255,0.55);
+  border-radius: 9px; padding: 6px 12px; font-size: 15px;
+}
+nav.mesas a[aria-current="page"] { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+nav.mesas a:focus-visible, .index a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
+.index { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.index a {
+  display: flex; gap: 14px; align-items: center;
+  background: var(--paper); color: var(--ink); text-decoration: none;
+  border-radius: 14px; padding: 14px 16px;
+}
+.index a .n { font-size: 30px; font-weight: 500; line-height: 1; min-width: 1.2em; }
+.index a span:last-child { font-weight: 500; line-height: 1.25; }
+footer { color: var(--soft); font-size: 13px; }
+@media (prefers-reduced-motion: no-preference) { .card { transition: transform .2s ease; } }
+</style>
+
+<div class="veil" aria-hidden="true"></div>
+<main class="wrap" id="app">
+  <p class="pill">Jornadas BioSoilutions · EcoLoop</p>
+  <h1>Suelo vivo. Retos y soluciones circulares</h1>
+  <p class="sub">Mapeo cooperativo de retos · 5 de noviembre de 2026 · Aula Natura, ETSEAMN, UPV</p>
+  <div class="index" id="index"></div>
+  <footer>bioSOILUTIONS (101112842) y ECOLOOP (101118127), Horizonte Europa</footer>
+</main>
+
+<script>
+const MESAS = [
+  { n: 1, tipo: 'Calidad y seguridad', reto: 'Mejorar la alfabetización en biofertilizantes', enunciado: 'Del residuo al fertilizante: ¿sabemos qué estamos aplicando?',
+    pregunta: '¿Cómo puede un agricultor/a saber si un bioproducto es adecuado para su cultivo y su suelo?',
+    contexto: 'La composición de los bioproductos (digestato, estruvita, frass o sangre hidrolizada) puede variar según las materias primas, el proceso de tratamiento y el almacenamiento. Pueden persistir o aparecer impurezas, microorganismos patógenos, metales pesados, microplásticos u otros contaminantes. El riesgo no es el mismo para todos los productos: no todos los lotes aportan los mismos nutrientes ni presentan los mismos riesgos.' },
+  { n: 2, tipo: 'Calidad y seguridad', reto: 'Controlar la acumulación de contaminantes', enunciado: '¿Se acumulan contaminantes con aplicaciones repetidas?',
+    pregunta: '¿Cómo podemos detectar y prevenir a tiempo la acumulación de contaminantes cuando se aplican bioproductos periódicamente?',
+    contexto: 'La presencia, persistencia y movilidad de metales potencialmente tóxicos, contaminantes orgánicos o microplásticos, según el origen y el tratamiento del residuo, son una realidad en función de los bioproductos que se añadan.' },
+  { n: 3, tipo: 'Gestión', reto: 'Identificar cómo, cuánto y cuándo aplicar', enunciado: 'Fertilizar en el momento y de la forma oportunos (cultivo, residuo y suelo): ¿cómo, cuánto y cuándo aplicar el bioproducto?',
+    pregunta: '¿Qué le impide hoy a un agricultor/a saber cuánto bioproducto aplicar, cuándo y de qué forma en su cultivo y en su suelo?',
+    contexto: 'Una aplicación excesiva o mal sincronizada puede provocar pérdidas de nitrógeno, lixiviación de nitratos, emisiones de amoníaco o escorrentía de fósforo. En el digestato, la disponibilidad de nutrientes depende también de su composición y de la proporción entre fracción líquida y sólida. En otros bioproductos la velocidad de liberación varía mucho: más rápida en la sangre hidrolizada, más lenta en la estruvita. Puede ser barato y haber suficiente para los campos, pero ¿es necesario en todos ellos?' },
+  { n: 4, tipo: 'Salud del suelo', reto: 'Mejorar el suelo a largo plazo, no solo alimentar el cultivo', enunciado: '',
+    pregunta: '¿Qué hace falta para que un agricultor/a apueste por mejorar su suelo a largo plazo y no solo la cosecha de la temporada?',
+    contexto: 'Los bioproductos pueden aportar materia orgánica y nutrientes, pero sus efectos sobre la estructura, la retención de agua, la salinidad y la actividad biológica dependen de la dosis, la calidad y el tipo de suelo.' },
+  { n: 5, tipo: 'Percepción social', reto: 'Lograr la confianza de las personas consumidoras en el biofertilizante y en los productos agrícolas finales', enunciado: '',
+    pregunta: '¿Qué haría que un agricultor/a no usara estos productos? ¿Y que un consumidor/a no comprara un alimento cultivado con ellos?',
+    contexto: 'Aunque el uso de nutrientes recuperados puede ser ambientalmente beneficioso, la palabra «residuo» puede generar rechazo, especialmente cuando se asocia con alimentos.' }
+];
+const app = document.getElementById('app');
+const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const FOOT = '<footer>bioSOILUTIONS (101112842) y ECOLOOP (101118127), Horizonte Europa</footer>';
+function nav(cur) {
+  return '<nav class="mesas" aria-label="Mesas"><a href="fichas.html"' + (cur ? '' : ' aria-current="page"') + '>Todas</a>' +
+    MESAS.map(m => '<a href="ficha-' + m.n + '.html"' + (cur === m.n ? ' aria-current="page"' : '') + '>Mesa ' + m.n + '</a>').join('') + '</nav>';
+}
+function renderIndex() {
+  app.innerHTML = '<p class="pill">Jornadas BioSoilutions · EcoLoop</p>' +
+    '<h1>Suelo vivo. Retos y soluciones circulares</h1>' +
+    '<p class="sub">Mapeo cooperativo de retos · 5 de noviembre de 2026 · Aula Natura, ETSEAMN, UPV</p>' +
+    '<div class="index">' + MESAS.map(m => '<a href="ficha-' + m.n + '.html"><span class="n">' + m.n + '</span><span>' + esc(m.reto) + '</span></a>').join('') + '</div>' + FOOT;
+  document.title = 'Fichas de mesa LL7';
+}
+function renderMesa(m) {
+  app.innerHTML = nav(m.n) +
+    '<p class="pill">Mesa ' + m.n + ' · ' + esc(m.tipo) + '</p>' +
+    '<div class="hexrow"><div class="hex" aria-hidden="true"></div><div><small>Reto de la mesa</small><strong>' + esc(m.reto) + '</strong></div></div>' +
+    '<section class="card"><h2>Pregunta guía</h2><p class="q">' + esc(m.pregunta) + '</p></section>' +
+    '<section class="card"><h2>Contexto</h2>' + (m.enunciado ? '<p><b>' + esc(m.enunciado) + '</b></p>' : '') + '<p>' + esc(m.contexto) + '</p></section>' +
+    '<p class="note">Los pasos de la dinámica se irán presentando en la pantalla de la sala, uno cada vez.</p>' + FOOT;
+  document.title = 'Mesa ' + m.n + ' · Fichas de mesa LL7';
+  window.scrollTo(0, 0);
+}
+function route() {
+  const h = (location.hash || '').replace('#', '');
+  const mm = /^mesa-([1-5])$/.exec(h);
+  if (mm) renderMesa(MESAS[Number(mm[1]) - 1]); else if (window.DEFAULT_MESA) renderMesa(MESAS[window.DEFAULT_MESA - 1]); else renderIndex();
+}
+window.addEventListener('hashchange', route);
+route();
+</script>
+
+</body></html>
