@@ -74,7 +74,7 @@ function render(rows){
  d.forEach(r=>{const m=/mesa\s*(\d)/i.exec(r[C.mesa]||'');if(m&&by[m[1]])by[m[1]].push(r)});
  const v=(r,k)=>C[k]>=0?(r[C[k]]||'').trim():'';
  const blk=(t,x,c)=>x?'<div class="blk" style="--c:'+c+'"><h3>'+t+'</h3><p>'+esc(x)+'</p></div>':'';
- const foto=x=>{if(!x)return'';const urls=x.split(/[\s,]+/).filter(u=>/^https?:\/\//.test(u));if(!urls.length)return'';return'<div class="blk foto"><h3>Foto del mapa</h3>'+urls.map(u=>'<a href="'+esc(u)+'" target="_blank" rel="noopener"><img src="'+esc(u)+'" alt="Foto del mapa de la mesa" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement(\'span\'),{textContent:\'Abrir la foto\'}))"></a>').join('')+'</div>'};
+ const foto=x=>{if(!x)return'';const urls=x.split(/[\s,]+/).filter(u=>/^https?:\/\//.test(u));if(!urls.length)return'';return'<div class="blk foto"><h3>'+(urls.length>1?'Fotos del mapa':'Foto del mapa')+'</h3>'+urls.map(u=>'<a href="'+esc(u)+'" target="_blank" rel="noopener"><img src="'+esc(u)+'" alt="Foto del mapa de la mesa" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement(\'span\'),{textContent:\'Abrir la foto\'}))"></a>').join('')+'</div>'};
  let n=0;
  out.innerHTML=Object.keys(MESAS).map(k=>{const [tipo,reto]=MESAS[k];const rs=by[k].slice().reverse();n+=rs.length;
   return '<section class="mesa" id="r-'+k+'"><header class="mh"><span class="hx" aria-hidden="true">'+k+'</span><div><h2>Mesa '+k+' · '+tipo+'</h2><p class="reto">'+esc(reto)+'</p></div></header>'+
