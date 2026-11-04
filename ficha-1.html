@@ -136,7 +136,7 @@ const app = document.getElementById('app');
 const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const FOOT = '<footer>bioSOILUTIONS (101112842) y ECOLOOP (101118127), Horizonte Europa</footer>';
 function nav(cur) {
-  return '<nav class="mesas" aria-label="Mesas"><a href="fichas.html"' + (cur ? '' : ' aria-current="page"') + '>Todas</a>' +
+  return '<nav class="mesas" aria-label="Mesas"><a href="index.html">Inicio</a><a href="fichas.html"' + (cur ? '' : ' aria-current="page"') + '>Todas</a>' +
     MESAS.map(m => '<a href="ficha-' + m.n + '.html"' + (cur === m.n ? ' aria-current="page"' : '') + '>Mesa ' + m.n + '</a>').join('') + '</nav>';
 }
 function renderIndex() {
