@@ -58,7 +58,7 @@ function render(rows){
  const foto=x=>{if(!x)return'';const urls=(x.match(/https?:\/\/[^\s,"'()\[\]<>]+/g)||[]);if(!urls.length)return'';return'<div class="blk foto"><h3>'+(urls.length>1?'Fotos del mapa':'Foto del mapa')+'</h3><div class="fotos">'+urls.map((u,i)=>'<a href="'+esc(u)+'" target="_blank" rel="noopener"><img src="'+esc(u)+'" data-orig="'+esc(u)+'" data-try="0" alt="Foto '+(i+1)+' del mapa de la mesa" referrerpolicy="no-referrer-when-downgrade" onerror="fotoErr(this)"></a>').join('')+'</div></div>'};
  let n=0;
  out.innerHTML=Object.keys(MESAS).map(k=>{const [tipo,reto]=MESAS[k];const rs=by[k].slice().reverse();n+=rs.length;
-  return '<section class="mesa" id="r-'+k+'"><header class="mh"><span class="hx" aria-hidden="true">'+k+'</span><div><h2>Mesa '+k+' · '+tipo+'</h2><p class="reto">'+esc(reto)+'</p></div></header>'+
+  return '<section class="mesa" id="r-'+k+'"><header class="mh"><span class="hx" aria-hidden="true">'+k+'</span><div><h2>Mesa '+k+'</h2><p class="reto">'+esc(reto)+'</p></div></header>'+
   (rs.length?rs.map(r=>'<div class="resp">'+(v(r,'fecha')?'<span class="when">Enviado: '+esc(v(r,'fecha'))+'</span>':'')+
    blk('Obstáculos',v(r,'obs'),'var(--red)')+blk('Acción prioritaria 1',v(r,'a1'),'var(--green)')+blk('Acción prioritaria 2',v(r,'a2'),'var(--green)')+blk('Acción prioritaria 3',v(r,'a3'),'var(--green)')+
    blk('Pregunta abierta',v(r,'preg'),'var(--lblue)')+foto(v(r,'foto'))+blk('Comentarios',v(r,'com'),'var(--blue)')+'</div>').join(''):'<p class="empty">Esta mesa aún no ha enviado su plantilla.</p>')+'</section>'}).join('');

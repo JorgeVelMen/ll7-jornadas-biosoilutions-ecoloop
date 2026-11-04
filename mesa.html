@@ -9,14 +9,14 @@
 .sitenav summary .ic{display:inline-block;width:18px;height:12px;border-top:2.5px solid currentColor;border-bottom:2.5px solid currentColor;position:relative}
 .sitenav summary .ic::after{content:"";position:absolute;left:0;right:0;top:50%;border-top:2.5px solid currentColor;transform:translateY(-50%)}
 .sitenav details[open] summary{background:#FBFBFF}
-.sitenav .menu{position:absolute;right:0;top:calc(100% + 8px);width:min(320px,calc(100vw - 32px));background:#FBFBFF;border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.35);padding:8px;display:flex;flex-direction:column}
-.sitenav .menu a{color:#0624FF;text-decoration:none;padding:11px 12px;border-radius:9px;font-size:16px;font-weight:500}
+.sitenav .menu{position:absolute;right:0;top:calc(100% + 8px);width:min(360px,calc(100vw - 32px));max-height:calc(100vh - 90px);overflow-y:auto;background:#FBFBFF;border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.35);padding:8px;display:flex;flex-direction:column}
+.sitenav .menu a{color:#0624FF;text-decoration:none;padding:10px 12px;border-radius:9px;font-size:16px;font-weight:500;line-height:1.25}
 .sitenav .menu a[aria-current="page"]{background:#D3DAFF}
 .sitenav .menu .sep{margin:6px 12px 2px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#55607F}
 .sitenav a:focus-visible,.sitenav summary:focus-visible{outline:3px solid #F5C431;outline-offset:2px}
 </style>
 <header class="sitenav"><div class="bar"><a class="home" href="index.html">Suelo vivo<small>Jornadas BioSoilutions · EcoLoop</small></a>
-<details><summary aria-label="Abrir el menú"><span class="ic" aria-hidden="true"></span>Menú</summary><nav class="menu" aria-label="Menú del sitio"><a href="index.html">Inicio</a><a href="agenda.html">Agenda</a><a href="mesa.html" aria-current="page">¿En qué mesa estoy?</a><a href="plantilla.html">Plantilla para portavoces</a><a href="resultados.html">Resultados de las mesas</a><span class="sep">Las cinco mesas</span><a href="ficha-1.html">Mesa 1 · Calidad y seguridad</a><a href="ficha-2.html">Mesa 2 · Calidad y seguridad</a><a href="ficha-3.html">Mesa 3 · Gestión</a><a href="ficha-4.html">Mesa 4 · Salud del suelo</a><a href="ficha-5.html">Mesa 5 · Percepción social</a></nav></details></div></header>
+<details><summary aria-label="Abrir el menú"><span class="ic" aria-hidden="true"></span>Menú</summary><nav class="menu" aria-label="Menú del sitio"><a href="index.html">Inicio</a><a href="agenda.html">Agenda</a><a href="mesa.html" aria-current="page">¿En qué mesa estoy?</a><a href="plantilla.html">Plantilla para portavoces</a><a href="resultados.html">Resultados de las mesas</a><span class="sep">Las cinco mesas</span><a href="ficha-1.html">Mesa 1 · Mejorar la alfabetización en biofertilizantes</a><a href="ficha-2.html">Mesa 2 · Controlar la acumulación de contaminantes</a><a href="ficha-3.html">Mesa 3 · Identificar cómo, cuánto y cuándo aplicar</a><a href="ficha-4.html">Mesa 4 · Mejorar el suelo a largo plazo, no solo alimentar el cultivo</a><a href="ficha-5.html">Mesa 5 · Lograr la confianza de las personas consumidoras en el biofertilizante y en los productos agrícolas finales</a></nav></details></div></header>
 <script>document.addEventListener('click',e=>{const d=document.querySelector('.sitenav details');if(d&&d.open&&!d.contains(e.target))d.open=false;});document.addEventListener('keydown',e=>{if(e.key==='Escape'){const d=document.querySelector('.sitenav details');if(d)d.open=false;}});</script>
 <title>¿En qué mesa estoy?</title>
 
