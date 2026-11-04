@@ -1,4 +1,23 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex"><meta name="googlebot" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex"><meta name="googlebot" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style><style id="sitenav-css">
+.sitenav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:#041BC4;border-bottom:1px solid rgba(211,218,255,.35);font-family:'Space Grotesk','Segoe UI',Arial,sans-serif}
+.sitenav .bar{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sitenav .home{color:#FBFBFF;text-decoration:none;font-weight:500;font-size:15px;line-height:1.2}
+.sitenav .home small{display:block;color:#D3DAFF;font-weight:400;font-size:12px}
+.sitenav details{position:relative}
+.sitenav summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;background:#F5C431;color:#0624FF;font-weight:700;font-size:16px;padding:9px 14px;border-radius:10px;user-select:none}
+.sitenav summary::-webkit-details-marker{display:none}
+.sitenav summary .ic{display:inline-block;width:18px;height:12px;border-top:2.5px solid currentColor;border-bottom:2.5px solid currentColor;position:relative}
+.sitenav summary .ic::after{content:"";position:absolute;left:0;right:0;top:50%;border-top:2.5px solid currentColor;transform:translateY(-50%)}
+.sitenav details[open] summary{background:#FBFBFF}
+.sitenav .menu{position:absolute;right:0;top:calc(100% + 8px);width:min(320px,calc(100vw - 32px));background:#FBFBFF;border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.35);padding:8px;display:flex;flex-direction:column}
+.sitenav .menu a{color:#0624FF;text-decoration:none;padding:11px 12px;border-radius:9px;font-size:16px;font-weight:500}
+.sitenav .menu a[aria-current="page"]{background:#D3DAFF}
+.sitenav .menu .sep{margin:6px 12px 2px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#55607F}
+.sitenav a:focus-visible,.sitenav summary:focus-visible{outline:3px solid #F5C431;outline-offset:2px}
+</style>
+<header class="sitenav"><div class="bar"><a class="home" href="index.html">Suelo vivo<small>Jornadas BioSoilutions · EcoLoop</small></a>
+<details><summary aria-label="Abrir el menú"><span class="ic" aria-hidden="true"></span>Menú</summary><nav class="menu" aria-label="Menú del sitio"><a href="index.html">Inicio</a><a href="agenda.html">Agenda</a><a href="mesa.html">¿En qué mesa estoy?</a><a href="plantilla.html" aria-current="page">Plantilla para portavoces</a><span class="sep">Las cinco mesas</span><a href="ficha-1.html">Mesa 1 · Calidad y seguridad</a><a href="ficha-2.html">Mesa 2 · Calidad y seguridad</a><a href="ficha-3.html">Mesa 3 · Gestión</a><a href="ficha-4.html">Mesa 4 · Salud del suelo</a><a href="ficha-5.html">Mesa 5 · Percepción social</a></nav></details></div></header>
+<script>document.addEventListener('click',e=>{const d=document.querySelector('.sitenav details');if(d&&d.open&&!d.contains(e.target))d.open=false;});document.addEventListener('keydown',e=>{if(e.key==='Escape'){const d=document.querySelector('.sitenav details');if(d)d.open=false;}});</script>
 <title>Plantilla para portavoces · LL7</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap">
 <style>:root{--blue:#0624FF;--paper:#FBFBFF;--soft:#D3DAFF;--ink2:#2B3A8F;--yellow:#F5C431;color-scheme:dark}*{box-sizing:border-box}body{background:var(--blue);color:var(--paper);font-family:'Space Grotesk','Segoe UI',Arial,sans-serif;font-size:17px;line-height:1.5}
@@ -8,7 +27,7 @@ h1{margin:0;font-weight:400;font-size:clamp(28px,7vw,40px);line-height:1.1}p{mar
 ol{margin:0;padding:16px 16px 16px 36px;background:var(--paper);color:var(--ink2);border-radius:14px}ol li{margin:6px 0}ol b{color:var(--blue)}
 .btn{display:block;text-align:center;background:var(--yellow);color:var(--blue);text-decoration:none;font-weight:500;border-radius:12px;padding:14px 16px;font-size:18px}
 a:focus-visible{outline:3px solid var(--paper);outline-offset:2px}</style>
-<main><p style="margin:0"><a href="index.html" style="color:var(--paper)">← Inicio</a></p><p class="pill">Jornadas BioSoilutions · EcoLoop</p><h1>Plantilla para portavoces</h1>
+<main><p class="pill">Jornadas BioSoilutions · EcoLoop</p><h1>Plantilla para portavoces</h1>
 <p class="sub">Puesta en común desde las 12:45 · 4 minutos por mesa · 5 de noviembre de 2026</p>
 <div id="go"></div>
 <ol><li><b>El reto</b> de la mesa (hexágono central).</li><li><b>Los obstáculos</b>: los 2 o 3 que más pesaron.</li><li><b>Las acciones</b>: las 3 prioritarias acordadas y quién debería impulsarlas.</li><li><b>Una pregunta</b> que queda abierta. Si no hubo acuerdo, se recoge aquí.</li></ol>
