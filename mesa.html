@@ -71,7 +71,7 @@ nav.views a[aria-current="page"] { background: var(--paper); color: var(--ink); 
 <div class="veil" aria-hidden="true"></div>
 <main class="wrap">
   <p class="pill">Jornadas BioSoilutions · EcoLoop</p>
-  <nav class="views" aria-label="Secciones"><a href="index.html">Inicio</a><a href="#buscar" id="v-buscar">Mi mesa</a><a href="#agenda" id="v-agenda">Agenda</a></nav>
+  <nav class="views" aria-label="Secciones"><a href="index.html">Inicio</a><a href="#buscar" id="v-buscar">Mi mesa</a><a href="agenda.html" id="v-agenda">Agenda</a></nav>
   <section id="sec-buscar" class="wrap" style="padding:0;gap:18px">
     <h1>¿En qué mesa estoy?</h1>
     <p class="sub">Mapeo cooperativo de retos · Jueves 5 de noviembre de 2026 · Aula Natura, Edificio 3G, UPV</p>
@@ -82,18 +82,7 @@ nav.views a[aria-current="page"] { background: var(--paper); color: var(--ink); 
     <div class="tl" id="tl-mesas"></div>
     <footer>Si no apareces, siéntate en la mesa con menos personas de tu perfil o pregunta en la mesa de registro.</footer>
   </section>
-  <section id="sec-agenda" class="wrap" style="padding:0;gap:18px" hidden>
-    <h1>Agenda de las jornadas</h1>
-    <p class="sub">Suelo vivo: retos y soluciones circulares · 5 y 6 de noviembre de 2026</p>
-    <div class="tl"><h2>Cómo llegar</h2><p style="margin:0">Jueves 5 · Aula Natura, Edificio 3G, UPV. Acceso por la entrada de la ETSEAMN, primer piso del edificio 3H, y desde allí subir al segundo piso. <a href="https://maps.app.goo.gl/7FgZvQJK8rK78TZT8" target="_blank" rel="noopener">Ver en Google Maps</a></p><p style="margin:8px 0 0">Viernes 6 · Finca Sinyent (AVA-ASAJA), Polinyà de Xúquer. <a href="https://maps.app.goo.gl/Aor9PdiNCen6YLGo6" target="_blank" rel="noopener">Ver en Google Maps</a></p></div>
-    <p class="alt">Pulsa sobre cada página para verla a pantalla completa y ampliarla. Para guardarla, mantén pulsada la imagen.</p>
-    <a class="pg" href="agenda-1.jpg" target="_blank" rel="noopener"><img src="agenda-1.jpg" alt="Agenda, página 1: jornada del 5 de noviembre en el Aula Natura" width="1240" height="1753"></a>
-    <a class="pg" href="agenda-2.jpg" target="_blank" rel="noopener"><img src="agenda-2.jpg" alt="Agenda, página 2: salida de campo del 6 de noviembre a la Finca Sinyent" width="1240" height="1753"></a>
-    <a class="btn" href="agenda.pdf" download>Descargar la agenda en PDF</a>
-    <p class="alt">Resumen en texto:</p>
-    <div class="tl" id="tl-5"></div>
-    <div class="tl" id="tl-6"></div>
-  </section>
+  
 </main>
 
 <script>
@@ -143,11 +132,12 @@ function tl(title, rows, hl) {
   return '<h2>' + esc(title) + '</h2><ol>' + rows.map(([t, a, k]) => '<li' + (hl && k === 'mesa' ? ' class="hl"' : '') + '><time>' + esc(t) + '</time><span>' + esc(a) + '</span></li>').join('') + '</ol>';
 }
 document.getElementById('tl-mesas').innerHTML = tl('Jueves 5 · Tu mesa en la agenda', D5, true);
-document.getElementById('tl-5').innerHTML = tl('Jueves 5 de noviembre · Aula Natura, Edificio 3G, UPV · 09:30 – 14:30', D5, false);
-document.getElementById('tl-6').innerHTML = tl('Viernes 6 de noviembre · Salida de campo · 08:30 – 14:00', D6, false);
+if(document.getElementById('tl-5'))document.getElementById('tl-5').innerHTML = tl('Jueves 5 de noviembre · Aula Natura, Edificio 3G, UPV · 09:30 – 14:30', D5, false);
+if(document.getElementById('tl-6'))document.getElementById('tl-6').innerHTML = tl('Viernes 6 de noviembre · Salida de campo · 08:30 – 14:00', D6, false);
 function route() {
-  const ag = location.hash === '#agenda';
-  document.getElementById('sec-agenda').hidden = !ag; document.getElementById('sec-buscar').hidden = ag;
+  if (location.hash === '#agenda') { location.replace('agenda.html'); }
+  const ag = false;
+  document.getElementById('sec-buscar').hidden = ag;
   document.getElementById('v-agenda').setAttribute('aria-current', ag ? 'page' : 'false');
   document.getElementById('v-buscar').setAttribute('aria-current', ag ? 'false' : 'page');
 }
