@@ -1,23 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex"><meta name="googlebot" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style><style id="sitenav-css">
-.sitenav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:#041BC4;border-bottom:1px solid rgba(211,218,255,.35);font-family:'Space Grotesk','Segoe UI',Arial,sans-serif}
-.sitenav .bar{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.sitenav .home{color:#FBFBFF;text-decoration:none;font-weight:500;font-size:15px;line-height:1.2}
-.sitenav .home small{display:block;color:#D3DAFF;font-weight:400;font-size:12px}
-.sitenav details{position:relative}
-.sitenav summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;background:#F5C431;color:#0624FF;font-weight:700;font-size:16px;padding:9px 14px;border-radius:10px;user-select:none}
-.sitenav summary::-webkit-details-marker{display:none}
-.sitenav summary .ic{display:inline-block;width:18px;height:12px;border-top:2.5px solid currentColor;border-bottom:2.5px solid currentColor;position:relative}
-.sitenav summary .ic::after{content:"";position:absolute;left:0;right:0;top:50%;border-top:2.5px solid currentColor;transform:translateY(-50%)}
-.sitenav details[open] summary{background:#FBFBFF}
-.sitenav .menu{position:absolute;right:0;top:calc(100% + 8px);width:min(320px,calc(100vw - 32px));background:#FBFBFF;border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.35);padding:8px;display:flex;flex-direction:column}
-.sitenav .menu a{color:#0624FF;text-decoration:none;padding:11px 12px;border-radius:9px;font-size:16px;font-weight:500}
-.sitenav .menu a[aria-current="page"]{background:#D3DAFF}
-.sitenav .menu .sep{margin:6px 12px 2px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#55607F}
-.sitenav a:focus-visible,.sitenav summary:focus-visible{outline:3px solid #F5C431;outline-offset:2px}
-</style>
-<header class="sitenav"><div class="bar"><a class="home" href="index.html">Suelo vivo<small>Jornadas BioSoilutions · EcoLoop</small></a>
-<details><summary aria-label="Abrir el menú"><span class="ic" aria-hidden="true"></span>Menú</summary><nav class="menu" aria-label="Menú del sitio"><a href="index.html">Inicio</a><a href="agenda.html">Agenda</a><a href="mesa.html">¿En qué mesa estoy?</a><a href="plantilla.html">Plantilla para portavoces</a><a href="resultados.html" aria-current="page">Resultados de las mesas</a><span class="sep">Las cinco mesas</span><a href="ficha-1.html">Mesa 1 · Calidad y seguridad</a><a href="ficha-2.html">Mesa 2 · Calidad y seguridad</a><a href="ficha-3.html">Mesa 3 · Gestión</a><a href="ficha-4.html">Mesa 4 · Salud del suelo</a><a href="ficha-5.html">Mesa 5 · Percepción social</a></nav></details></div></header>
-<script>document.addEventListener('click',e=>{const d=document.querySelector('.sitenav details');if(d&&d.open&&!d.contains(e.target))d.open=false;});document.addEventListener('keydown',e=>{if(e.key==='Escape'){const d=document.querySelector('.sitenav details');if(d)d.open=false;}});</script>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex"><meta name="googlebot" content="noindex,nofollow"><meta name="referrer" content="strict-origin-when-cross-origin"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Resultados de las mesas · LL7</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap">
 <style>:root{--blue:#0624FF;--paper:#FBFBFF;--soft:#D3DAFF;--ink2:#2B3A8F;--yellow:#F5C431;--red:#F0624B;--green:#63C24A;--lblue:#8FD3FF;color-scheme:dark}
@@ -39,14 +20,14 @@ nav.jump{display:flex;flex-wrap:wrap;gap:6px}nav.jump a[aria-current="page"]{bac
 .blk h3::before{content:"";width:12px;height:14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:var(--c,var(--blue))}
 .blk p{margin:0;white-space:pre-wrap}
 .when{font-size:13px;color:#55607F}
-.foto img{display:block;width:100%;height:auto;border-radius:10px;margin-top:4px}
+.fotos{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px;margin-top:4px}.foto img{display:block;width:100%;height:auto;border-radius:10px}.nofoto{display:inline-block;padding:8px 12px;border:1.5px solid var(--blue);border-radius:8px;color:var(--blue);font-weight:500}
 .empty{margin:0;color:#55607F;font-style:italic}
 a:focus-visible,.btn:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
 @media print{@page{size:A4;margin:14mm}
  body{background:#fff!important;color:#000;font-size:11pt}.sitenav,.tools,nav.jump,.status,.noprint{display:none!important}
  main{max-width:none;padding:0}h1{color:#0624FF;font-size:20pt}.sub{color:#333}.pill{border:1px solid #0624FF}
  .mesa{break-before:page;border:1px solid #ccd;border-radius:8px}.mesa:first-of-type{break-before:auto}
- .foto img{max-height:120mm;width:auto;max-width:100%}}
+ .fotos{grid-template-columns:1fr 1fr}.foto img{max-height:90mm;width:100%;object-fit:contain}.foto a{break-inside:avoid}}
 </style>
 <main>
 <p class="pill">Jornadas BioSoilutions · EcoLoop</p>
@@ -74,7 +55,7 @@ function render(rows){
  d.forEach(r=>{const m=/mesa\s*(\d)/i.exec(r[C.mesa]||'');if(m&&by[m[1]])by[m[1]].push(r)});
  const v=(r,k)=>C[k]>=0?(r[C[k]]||'').trim():'';
  const blk=(t,x,c)=>x?'<div class="blk" style="--c:'+c+'"><h3>'+t+'</h3><p>'+esc(x)+'</p></div>':'';
- const foto=x=>{if(!x)return'';const urls=x.split(/[\s,]+/).filter(u=>/^https?:\/\//.test(u));if(!urls.length)return'';return'<div class="blk foto"><h3>'+(urls.length>1?'Fotos del mapa':'Foto del mapa')+'</h3>'+urls.map(u=>'<a href="'+esc(u)+'" target="_blank" rel="noopener"><img src="'+esc(u)+'" alt="Foto del mapa de la mesa" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement(\'span\'),{textContent:\'Abrir la foto\'}))"></a>').join('')+'</div>'};
+ const foto=x=>{if(!x)return'';const urls=(x.match(/https?:\/\/[^\s,"'()\[\]<>]+/g)||[]);if(!urls.length)return'';return'<div class="blk foto"><h3>'+(urls.length>1?'Fotos del mapa':'Foto del mapa')+'</h3><div class="fotos">'+urls.map((u,i)=>'<a href="'+esc(u)+'" target="_blank" rel="noopener"><img src="'+esc(u)+'" data-orig="'+esc(u)+'" data-try="0" alt="Foto '+(i+1)+' del mapa de la mesa" referrerpolicy="no-referrer-when-downgrade" onerror="fotoErr(this)"></a>').join('')+'</div></div>'};
  let n=0;
  out.innerHTML=Object.keys(MESAS).map(k=>{const [tipo,reto]=MESAS[k];const rs=by[k].slice().reverse();n+=rs.length;
   return '<section class="mesa" id="r-'+k+'"><header class="mh"><span class="hx" aria-hidden="true">'+k+'</span><div><h2>Mesa '+k+' · '+tipo+'</h2><p class="reto">'+esc(reto)+'</p></div></header>'+
@@ -82,6 +63,10 @@ function render(rows){
    blk('Obstáculos',v(r,'obs'),'var(--red)')+blk('Acción prioritaria 1',v(r,'a1'),'var(--green)')+blk('Acción prioritaria 2',v(r,'a2'),'var(--green)')+blk('Acción prioritaria 3',v(r,'a3'),'var(--green)')+
    blk('Pregunta abierta',v(r,'preg'),'var(--lblue)')+foto(v(r,'foto'))+blk('Comentarios',v(r,'com'),'var(--blue)')+'</div>').join(''):'<p class="empty">Esta mesa aún no ha enviado su plantilla.</p>')+'</section>'}).join('');
  return n}
+function fotoErr(img){const t=+img.dataset.try;const u=img.dataset.orig;
+ if(t===0){img.dataset.try=1;img.referrerPolicy='no-referrer';img.src=u+(u.includes('?')?'&':'?')+'r='+Date.now();return}
+ if(t===1){img.dataset.try=2;img.src='https://images.weserv.nl/?url='+encodeURIComponent(u.replace(/^https?:\/\//,''))+'&w=1600&output=jpg';return}
+ const s=document.createElement('span');s.className='nofoto';s.textContent='Abrir la foto '+(img.alt.match(/\d+/)||[''])[0];img.replaceWith(s)}
 async function load(){const st=document.getElementById('status');
  try{const r=await fetch(CSV+'&t='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error(r.status);const n=render(parseCSV(await r.text()));filt();
   const t=new Date().toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});st.textContent=(n?n+(n==1?' respuesta':' respuestas'):'Aún no hay respuestas')+' · actualizado a las '+t}
